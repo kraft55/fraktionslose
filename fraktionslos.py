@@ -43,13 +43,15 @@ def count_nichtAbgegeben(df):
 		if get_nichtAbgegeben(row):
 			count += 1
 	return count
-
+def count_gesamt(df):
+	return len(df)
 
 
 
 
 def count_votes(df):
 	output = []
+	output.append(count_gesamt(df))
 	output.append(count_ja(df))
 	output.append(count_nein(df))
 	output.append(count_ungueltig(df))
@@ -60,7 +62,7 @@ def zusammenfassung_erzeugen(file_path_input, file_path_output):
 	data = pd.read_csv(file_path_input)
 	parteien_liste = data['Fraktion/Gruppe'].unique()
 
-	column_labels = ['Sitzungsnr', 'Stimmnr', 'Partei', 'Ja', 'Nein', 'Ungueltig', 'nichtAbgegeben']
+	column_labels = ['Sitzungsnr', 'Stimmnr', 'Partei', 'Gesamt', 'Ja', 'Nein', 'Ungueltig', 'nichtAbgegeben']
 	output_df = pd.DataFrame(columns=column_labels)
 
 
@@ -80,4 +82,4 @@ def zusammenfassung_erzeugen(file_path_input, file_path_output):
 	print(output_df)
 	output_df.to_csv(file_path_output, index=False)
 
-# zusammenfassung_erzeugen('./output.csv', 'stimmen_zusammenfassung.csv')
+zusammenfassung_erzeugen('./output.csv', 'stimmen_zusammenfassung.csv')
