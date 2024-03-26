@@ -59,7 +59,9 @@ def count_votes(df):
 data = pd.read_csv('./output.csv')
 parteien_liste = data['Fraktion/Gruppe'].unique()
 
-output_df = pd.DataFrame()
+column_labels = ['Sitzungsnr', 'Stimmnr', 'Partei', 'Ja', 'Nein', 'Ungueltig', 'nichtAbgegeben']
+output_df = pd.DataFrame(columns=column_labels)
+
 
 sitzungsnummern = data['Sitzungnr'].unique()
 
@@ -72,4 +74,10 @@ for sitzungsnr in sitzungsnummern:
 			stimmen_partei = [sitzungsnr, stimmnr, partei]
 			df_sitzungsnr_stimmnr_partei = df_sitzungsnr_stimmnr[df_sitzungsnr_stimmnr['Fraktion/Gruppe'] == partei]
 			stimmen_partei.extend(count_votes(df_sitzungsnr_stimmnr_partei))
-			print(stimmen_partei)
+			stimmen_partei_series = pd.Series(stimmen_partei, index=output_df.columns)
+			output_df = pd.concat([output_df,stimmen_partei_series.to_frame().T], ignore_index=True)
+
+
+print(output_df)
+
+output_df.to_csv("stimmen_zusammenfassung.csv", index=False)
