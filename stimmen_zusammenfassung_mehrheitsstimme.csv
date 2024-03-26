@@ -1,4 +1,4 @@
-Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben,Mehrheitsstimme
+Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Enthaltung,nichtAbgegeben,Mehrheitsstimme
 92,1,SPD,206,196,2,1,7,Ja
 92,1,CDU/CSU,197,0,184,0,13,Nein
 92,1,BÜ90/GR,118,112,0,0,6,Ja
@@ -24,9 +24,9 @@ Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben,Mehrheitsstimm
 95,1,CDU/CSU,197,178,0,0,19,Ja
 95,1,BÜ90/GR,118,0,104,0,14,Nein
 95,1,FDP,92,0,78,0,14,Nein
-95,1,AfD,78,1,0,62,15,Ungueltig
+95,1,AfD,78,1,0,62,15,Enthaltung
 95,1,DIE LINKE.,39,0,27,0,12,Nein
-95,1,Fraktionslos,6,1,1,2,2,Ungueltig
+95,1,Fraktionslos,6,1,1,2,2,Enthaltung
 95,2,SPD,206,0,187,0,19,Nein
 95,2,CDU/CSU,197,180,0,0,17,Ja
 95,2,BÜ90/GR,118,0,103,0,15,Nein
@@ -73,9 +73,9 @@ Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben,Mehrheitsstimm
 101,1,CDU/CSU,197,169,0,0,28,Ja
 101,1,BÜ90/GR,118,0,111,0,7,Nein
 101,1,FDP,92,0,78,0,14,Nein
-101,1,AfD,78,0,0,63,15,Ungueltig
+101,1,AfD,78,0,0,63,15,Enthaltung
 101,1,DIE LINKE.,39,0,34,0,5,Nein
-101,1,Fraktionslos,6,0,1,3,2,Ungueltig
+101,1,Fraktionslos,6,0,1,3,2,Enthaltung
 101,2,SPD,206,183,1,0,22,Ja
 101,2,CDU/CSU,197,160,1,2,34,Ja
 101,2,BÜ90/GR,118,110,1,1,6,Ja
@@ -116,7 +116,7 @@ Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben,Mehrheitsstimm
 104,1,BÜ90/GR,118,99,0,0,19,Ja
 104,1,FDP,92,79,0,0,13,Ja
 104,1,AfD,78,0,65,0,13,Nein
-104,1,DIE LINKE.,39,4,0,25,10,Ungueltig
+104,1,DIE LINKE.,39,4,0,25,10,Enthaltung
 104,1,Fraktionslos,6,1,2,0,3,nichtAbgegeben
 107,1,SPD,206,191,0,1,14,Ja
 107,1,CDU/CSU,197,0,173,0,24,Nein
@@ -157,21 +157,21 @@ Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben,Mehrheitsstimm
 109,4,CDU/CSU,197,181,0,0,16,Ja
 109,4,BÜ90/GR,118,104,0,0,14,Ja
 109,4,FDP,92,80,0,0,12,Ja
-109,4,AfD,78,0,0,67,11,Ungueltig
+109,4,AfD,78,0,0,67,11,Enthaltung
 109,4,DIE LINKE.,39,35,0,0,4,Ja
-109,4,Fraktionslos,6,0,0,3,3,Ungueltig
+109,4,Fraktionslos,6,0,0,3,3,Enthaltung
 113,1,SPD,206,194,0,0,12,Ja
 113,1,CDU/CSU,197,0,168,0,29,Nein
 113,1,BÜ90/GR,118,111,0,0,7,Ja
 113,1,FDP,92,83,0,1,8,Ja
 113,1,AfD,78,0,63,0,15,Nein
-113,1,DIE LINKE.,39,0,0,30,9,Ungueltig
+113,1,DIE LINKE.,39,0,0,30,9,Enthaltung
 113,1,Fraktionslos,6,0,3,0,3,Nein
 113,2,SPD,206,1,183,0,22,Nein
 113,2,CDU/CSU,197,151,0,0,46,Ja
 113,2,BÜ90/GR,118,0,108,0,10,Nein
 113,2,FDP,92,2,76,0,14,Nein
-113,2,AfD,78,1,2,54,21,Ungueltig
+113,2,AfD,78,1,2,54,21,Enthaltung
 113,2,DIE LINKE.,39,29,0,0,10,Ja
 113,2,Fraktionslos,6,0,0,1,5,nichtAbgegeben
 113,3,SPD,206,173,1,0,32,Ja
@@ -277,7 +277,7 @@ Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben,Mehrheitsstimm
 132,1,BÜ90/GR,118,102,0,0,16,Ja
 132,1,FDP,92,66,0,0,26,Ja
 132,1,AfD,78,0,13,0,65,nichtAbgegeben
-132,1,DIE LINKE.,38,0,1,20,17,Ungueltig
+132,1,DIE LINKE.,38,0,1,20,17,Enthaltung
 132,1,Fraktionslos,6,1,2,0,3,nichtAbgegeben
 135,1,SPD,207,185,0,0,22,Ja
 135,1,CDU/CSU,197,150,0,2,45,Ja
@@ -340,7 +340,7 @@ Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben,Mehrheitsstimm
 142,1,BÜ90/GR,118,97,0,0,21,Ja
 142,1,FDP,92,83,0,0,9,Ja
 142,1,AfD,78,0,54,0,24,Nein
-142,1,DIE LINKE.,38,0,4,22,12,Ungueltig
+142,1,DIE LINKE.,38,0,4,22,12,Enthaltung
 142,1,Fraktionslos,6,1,3,0,2,Nein
 145,1,SPD,207,194,0,0,13,Ja
 145,1,CDU/CSU,197,0,174,0,23,Nein
@@ -376,4 +376,4 @@ Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben,Mehrheitsstimm
 145,5,FDP,92,77,0,0,15,Ja
 145,5,AfD,78,0,49,0,29,Nein
 145,5,DIE LINKE.,0,0,0,0,0,Ja
-145,5,Fraktionslos,44,0,6,20,18,Ungueltig
+145,5,Fraktionslos,44,0,6,20,18,Enthaltung
