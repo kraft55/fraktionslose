@@ -30,6 +30,14 @@ def count_nein(df):
 			count += 1
 	return count
 
+def count_enthaltung(df):
+	count = 0
+	for i, row in df.iterrows():
+		if get_enthaltung(row):
+			count += 1
+	return count
+
+
 def count_ungueltig(df):
 	count = 0
 	for i, row in df.iterrows():
@@ -54,7 +62,8 @@ def count_votes(df):
 	output.append(count_gesamt(df))
 	output.append(count_ja(df))
 	output.append(count_nein(df))
-	output.append(count_ungueltig(df))
+	output.append(count_enthaltung(df))
+	# output.append(count_ungueltig(df))
 	output.append(count_nichtAbgegeben(df))
 	return output
 
@@ -62,7 +71,7 @@ def zusammenfassung_erzeugen(file_path_input, file_path_output):
 	data = pd.read_csv(file_path_input)
 	parteien_liste = data['Fraktion/Gruppe'].unique()
 
-	column_labels = ['Sitzungsnr', 'Stimmnr', 'Partei', 'Gesamt', 'Ja', 'Nein', 'Ungueltig', 'nichtAbgegeben']
+	column_labels = ['Sitzungsnr', 'Stimmnr', 'Partei', 'Gesamt', 'Ja', 'Nein', 'Enthaltung', 'nichtAbgegeben']
 	output_df = pd.DataFrame(columns=column_labels)
 
 
@@ -92,5 +101,5 @@ def majority_vote(inputpath, outputpath):
 	df_majority.to_csv(outputpath, index=False)
 
 
-# zusammenfassung_erzeugen('./output.csv', 'stimmen_zusammenfassung.csv')
-majority_vote('stimmen_zusammenfassung.csv', 'stimmen_zusammenfassung_mehrheitsstimme.csv')
+zusammenfassung_erzeugen('./output.csv', 'stimmen_zusammenfassung.csv')
+# majority_vote('stimmen_zusammenfassung.csv', 'stimmen_zusammenfassung_mehrheitsstimme.csv')

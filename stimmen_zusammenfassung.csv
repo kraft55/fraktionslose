@@ -1,4 +1,4 @@
-Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Ungueltig,nichtAbgegeben
+Sitzungsnr,Stimmnr,Partei,Gesamt,Ja,Nein,Enthaltung,nichtAbgegeben
 92,1,SPD,206,196,2,1,7
 92,1,CDU/CSU,197,0,184,0,13
 92,1,BÜ90/GR,118,112,0,0,6
