@@ -82,4 +82,15 @@ def zusammenfassung_erzeugen(file_path_input, file_path_output):
 	print(output_df)
 	output_df.to_csv(file_path_output, index=False)
 
-zusammenfassung_erzeugen('./output.csv', 'stimmen_zusammenfassung.csv')
+
+def majority_vote(inputpath, outputpath):
+	df_majority = pd.read_csv(inputpath)
+	mehrheiten = []
+	for i, row in df_majority.iterrows():
+		mehrheiten.append(row[['Ja', 'Nein', 'Ungueltig', 'nichtAbgegeben']].idxmax())
+	df_majority['Mehrheitsstimme'] = mehrheiten
+	df_majority.to_csv(outputpath, index=False)
+
+
+# zusammenfassung_erzeugen('./output.csv', 'stimmen_zusammenfassung.csv')
+majority_vote('stimmen_zusammenfassung.csv', 'stimmen_zusammenfassung_mehrheitsstimme.csv')
