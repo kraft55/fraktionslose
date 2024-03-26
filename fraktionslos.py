@@ -56,28 +56,28 @@ def count_votes(df):
 	output.append(count_nichtAbgegeben(df))
 	return output
 
-data = pd.read_csv('./output.csv')
-parteien_liste = data['Fraktion/Gruppe'].unique()
+def zusammenfassung_erzeugen(file_path_input, file_path_output):
+	data = pd.read_csv(file_path_input)
+	parteien_liste = data['Fraktion/Gruppe'].unique()
 
-column_labels = ['Sitzungsnr', 'Stimmnr', 'Partei', 'Ja', 'Nein', 'Ungueltig', 'nichtAbgegeben']
-output_df = pd.DataFrame(columns=column_labels)
-
-
-sitzungsnummern = data['Sitzungnr'].unique()
-
-for sitzungsnr in sitzungsnummern:
-	df_sitzungsnr = data[data['Sitzungnr'] == sitzungsnr]
-	unique_stimmnr = df_sitzungsnr['Abstimmnr'].unique()
-	for stimmnr in unique_stimmnr:
-		df_sitzungsnr_stimmnr = df_sitzungsnr[df_sitzungsnr['Abstimmnr'] == stimmnr]
-		for partei in parteien_liste:
-			stimmen_partei = [sitzungsnr, stimmnr, partei]
-			df_sitzungsnr_stimmnr_partei = df_sitzungsnr_stimmnr[df_sitzungsnr_stimmnr['Fraktion/Gruppe'] == partei]
-			stimmen_partei.extend(count_votes(df_sitzungsnr_stimmnr_partei))
-			stimmen_partei_series = pd.Series(stimmen_partei, index=output_df.columns)
-			output_df = pd.concat([output_df,stimmen_partei_series.to_frame().T], ignore_index=True)
+	column_labels = ['Sitzungsnr', 'Stimmnr', 'Partei', 'Ja', 'Nein', 'Ungueltig', 'nichtAbgegeben']
+	output_df = pd.DataFrame(columns=column_labels)
 
 
-print(output_df)
+	sitzungsnummern = data['Sitzungnr'].unique()
 
-output_df.to_csv("stimmen_zusammenfassung.csv", index=False)
+	for sitzungsnr in sitzungsnummern:
+		df_sitzungsnr = data[data['Sitzungnr'] == sitzungsnr]
+		unique_stimmnr = df_sitzungsnr['Abstimmnr'].unique()
+		for stimmnr in unique_stimmnr:
+			df_sitzungsnr_stimmnr = df_sitzungsnr[df_sitzungsnr['Abstimmnr'] == stimmnr]
+			for partei in parteien_liste:
+				stimmen_partei = [sitzungsnr, stimmnr, partei]
+				df_sitzungsnr_stimmnr_partei = df_sitzungsnr_stimmnr[df_sitzungsnr_stimmnr['Fraktion/Gruppe'] == partei]
+				stimmen_partei.extend(count_votes(df_sitzungsnr_stimmnr_partei))
+				stimmen_partei_series = pd.Series(stimmen_partei, index=output_df.columns)
+				output_df = pd.concat([output_df,stimmen_partei_series.to_frame().T], ignore_index=True)
+	print(output_df)
+	output_df.to_csv(file_path_output, index=False)
+
+# zusammenfassung_erzeugen('./output.csv', 'stimmen_zusammenfassung.csv')
